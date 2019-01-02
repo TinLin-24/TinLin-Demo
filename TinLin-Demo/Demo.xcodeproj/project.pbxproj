@@ -13,6 +13,7 @@
 		0411D8A621D711A000C76DB2 /* TLShutterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0411D8A521D711A000C76DB2 /* TLShutterButton.m */; };
 		045ABF1621C7430D008C8C5D /* UIViewController+TLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045ABF1521C7430D008C8C5D /* UIViewController+TLNavigationController.m */; };
 		045ABF1A21C78F97008C8C5D /* HeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045ABF1921C78F97008C8C5D /* HeaderViewController.m */; };
+		0489425721DCA21B00603D4B /* TLCameraConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 0489425621DCA21B00603D4B /* TLCameraConfig.m */; };
 		049FC91421B673DF00AF04FF /* GYStickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FC91321B673DF00AF04FF /* GYStickerView.m */; };
 		04A405CF21C0BEA400CD2998 /* WaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A405CE21C0BEA400CD2998 /* WaveViewController.m */; };
 		04A405D321C0EE6100CD2998 /* LayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A405D221C0EE6100CD2998 /* LayerViewController.m */; };
@@ -81,6 +82,8 @@
 		045ABF1521C7430D008C8C5D /* UIViewController+TLNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TLNavigationController.m"; sourceTree = "<group>"; };
 		045ABF1821C78F97008C8C5D /* HeaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderViewController.h; sourceTree = "<group>"; };
 		045ABF1921C78F97008C8C5D /* HeaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderViewController.m; sourceTree = "<group>"; };
+		0489425521DCA21B00603D4B /* TLCameraConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLCameraConfig.h; sourceTree = "<group>"; };
+		0489425621DCA21B00603D4B /* TLCameraConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLCameraConfig.m; sourceTree = "<group>"; };
 		049FC91221B673DF00AF04FF /* GYStickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYStickerView.h; sourceTree = "<group>"; };
 		049FC91321B673DF00AF04FF /* GYStickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYStickerView.m; sourceTree = "<group>"; };
 		04A405CD21C0BEA400CD2998 /* WaveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaveViewController.h; sourceTree = "<group>"; };
@@ -237,6 +240,15 @@
 			path = TableHeaderView;
 			sourceTree = "<group>";
 		};
+		0489425421DCA1FE00603D4B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0489425521DCA21B00603D4B /* TLCameraConfig.h */,
+				0489425621DCA21B00603D4B /* TLCameraConfig.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		049FC90E21B6628600AF04FF /* SwipeAction */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +317,7 @@
 		04CDE4AB21D5D525002A1E81 /* AVCapture */ = {
 			isa = PBXGroup;
 			children = (
+				0489425421DCA1FE00603D4B /* Model */,
 				0411D89D21D707EF00C76DB2 /* View */,
 				04CDE4AC21D5F96C002A1E81 /* ViewController */,
 			);
@@ -569,7 +582,6 @@
 				39713F6F21131E3C00F16094 /* Controller */,
 				394B152320EE378A009C879A /* Model */,
 				39713F4A2112ECB400F16094 /* Class */,
-				39E495AA21183A4300F26B0A /* Supporting Files */,
 				39866B3920AB00940011C4B7 /* AppDelegate.h */,
 				39866B3A20AB00940011C4B7 /* AppDelegate.m */,
 				39FDED10211938670064CDD9 /* MyOOMDataManager.h */,
@@ -656,13 +668,6 @@
 				39FDED162119706F0064CDD9 /* View */,
 			);
 			path = UIStackView;
-			sourceTree = "<group>";
-		};
-		39E495AA21183A4300F26B0A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		39FDED12211942A30064CDD9 /* CroppedFillet */ = {
@@ -863,6 +868,7 @@
 				04C8A6D721B7705F00D7B7ED /* MapViewController.m in Sources */,
 				3918E0A720EC852A00E365D4 /* BaseTableViewCell.m in Sources */,
 				39085936211ED77900B70962 /* UFPhotoView.m in Sources */,
+				0489425721DCA21B00603D4B /* TLCameraConfig.m in Sources */,
 				04CDE4AF21D5F98F002A1E81 /* TLAVCaptureViewController.m in Sources */,
 				04F69CFD21C392FF000D0AFF /* SwipeActionViewController.m in Sources */,
 				04A405CF21C0BEA400CD2998 /* WaveViewController.m in Sources */,

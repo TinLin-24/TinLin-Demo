@@ -25,19 +25,16 @@ typedef NS_ENUM(NSInteger, TLEnableType) {
 // 长按的最长时间
 @property (nonatomic, assign)NSTimeInterval longPressMaxDuration;
 
-//
+// 圆环进度条的颜色
 @property (nonatomic, strong)UIColor *progressColor;
 
-//
-@property (nonatomic, assign)CGFloat progressWidth;
-
-//
+// 点击回调
 @property (nonatomic, copy)void (^didTap)(TLShutterButton *sender);
 
-//
+// 开始长按回调
 @property (nonatomic, copy)void (^didStartLongPress)(TLShutterButton *sender);
 
-//
+// 长按结束
 @property (nonatomic, copy)void (^didEndLongPress)(TLShutterButton *sender);
 
 - (instancetype)initWithFrame:(CGRect)frame EnableType:(TLEnableType)type;

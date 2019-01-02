@@ -100,15 +100,13 @@ static const NSTimeInterval kAnimationDuration = 0.33f;
     [self.layer addSublayer:self.backgroundLayer];
     
     [self.layer addSublayer:self.progressLayer];
-
+    
     [self.layer addSublayer:self.centerLayer];
 }
 
 #pragma mark - Action
 
 - (void)_didTap:(TLShutterButton *)sender {
-    NSLog(@"");
-    [MBProgressHUD tl_showTips:@"Tap"];
     !self.didTap ? : self.didTap(self);
 }
 
@@ -167,6 +165,17 @@ static const NSTimeInterval kAnimationDuration = 0.33f;
     !self.didEndLongPress ? : self.didEndLongPress(self);
 }
 
+- (void)_showRecordingAnimation {
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    [animation setValue:kAnimationBorder forKey:kAnimationKey];
+    animation.delegate = self;
+    animation.duration = self.longPressMaxDuration;
+    animation.fromValue = @0;
+    animation.toValue = @1;
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    [self.progressLayer addAnimation:animation forKey:@"animation"];
+}
+
 #pragma mark - CAAnimationDelegate
 
 - (void)animationDidStart:(CAAnimation *)anim {
@@ -193,17 +202,6 @@ static const NSTimeInterval kAnimationDuration = 0.33f;
         self.longPressGestureRecognizer.enabled = NO;
         self.longPressGestureRecognizer.enabled = YES;
     }
-}
-
-- (void)_showRecordingAnimation {
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    [animation setValue:kAnimationBorder forKey:kAnimationKey];
-    animation.delegate = self;
-    animation.duration = self.longPressMaxDuration;
-    animation.fromValue = @0;
-    animation.toValue = @1;
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    [self.progressLayer addAnimation:animation forKey:@"animation"];
 }
 
 #pragma mark - 辅助方法
@@ -254,18 +252,6 @@ static const NSTimeInterval kAnimationDuration = 0.33f;
 - (void)setProgressColor:(UIColor *)progressColor {
     _progressColor = progressColor;
     self.progressLayer.strokeColor = progressColor.CGColor;
-}
-
-- (void)setProgressWidth:(CGFloat)progressWidth {
-    _progressWidth = progressWidth;
-
-    CGFloat lineWidth = progressWidth;
-    CGFloat radius = self.width/2;
-    CGPoint center = CGPointMake(radius, radius);
-    radius -= lineWidth/2;
-    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:-M_PI_2 endAngle:M_PI_2*3 clockwise:YES];
-    self.progressLayer.path = path.CGPath;
-    self.progressLayer.lineWidth = lineWidth;
 }
 
 #pragma mark - Getter
