@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, TLEnableType) {
 // 开始长按回调
 @property (nonatomic, copy)void (^didStartLongPress)(TLShutterButton *sender);
 
-// 长按结束
+// 长按结束回调
 @property (nonatomic, copy)void (^didEndLongPress)(TLShutterButton *sender);
 
 - (instancetype)initWithFrame:(CGRect)frame EnableType:(TLEnableType)type;

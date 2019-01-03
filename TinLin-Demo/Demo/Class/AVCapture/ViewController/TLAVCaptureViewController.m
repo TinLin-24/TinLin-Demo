@@ -26,17 +26,21 @@
 // AVCaptureDevice
 @property (nonatomic, strong) AVCaptureDevice *audioDevice;
 
-// AVCaptureInput
+// 视频输入
 @property (nonatomic, strong) AVCaptureDeviceInput *videoDeviceInput;
-// <#note#>
-@property (nonatomic, strong) AVCaptureAudioDataOutput *audioDataOutput;
+// 音频输入
+@property (nonatomic, strong) AVCaptureDeviceInput *audioDeviceInput;
 
 
 // 照片输出
 @property (nonatomic, strong) AVCapturePhotoOutput *photoOutput;
+// 图片
+@property (nonatomic, strong) AVCaptureStillImageOutput *stillImageOutput;
+
+
 // 视频输出
 @property (nonatomic, strong) AVCaptureMovieFileOutput *movieFileOutput;
-// 元数据输出
+// 元数据输出 (扫码)
 @property (nonatomic, strong) AVCaptureMetadataOutput *metadataOutput;
 
 // 预览层
@@ -59,6 +63,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    [self.captureSession startRunning];
+
     [self.navigationController setNavigationBarHidden:YES];
     self.rt_disableInteractivePop = NO;
 }
@@ -70,6 +77,9 @@
 - (void)configure {
     if ([self.captureSession canAddInput:self.videoDeviceInput]) {
         [self.captureSession addInput:self.videoDeviceInput];
+    }
+    if ([self.captureSession canAddInput:self.audioDeviceInput]) {
+        [self.captureSession addInput:self.audioDeviceInput];
     }
     if ([self.captureSession canAddOutput:self.photoOutput]) {
         [self.captureSession addOutput:self.photoOutput];
@@ -86,8 +96,6 @@
         [self.captureSession commitConfiguration];
     }
     [self.captureSession addOutput:self.metadataOutput];
-    
-    [self.captureSession startRunning];
     
     [self.view.layer addSublayer:self.previewLayer];
 }
@@ -201,6 +209,14 @@
     return _videoDeviceInput;
 }
 
+- (AVCaptureDeviceInput *)audioDeviceInput {
+    if (!_audioDeviceInput) {
+        _audioDeviceInput = [[AVCaptureDeviceInput alloc] initWithDevice:self.audioDevice error:nil];
+    }
+    return _audioDeviceInput;
+}
+
+
 - (AVCapturePhotoOutput *)photoOutput {
     if (!_photoOutput) {
         _photoOutput = [[AVCapturePhotoOutput alloc] init];
@@ -231,15 +247,6 @@
         _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     }
     return _previewLayer;
-}
-
-- (AVCaptureAudioDataOutput *)audioDataOutput {
-    if (!_audioDataOutput) {
-        _audioDataOutput = [[AVCaptureAudioDataOutput alloc] init];
-        dispatch_queue_t captureQueue = dispatch_queue_create("com.TinLin.audioDataOutput", DISPATCH_QUEUE_SERIAL);
-        [_audioDataOutput setSampleBufferDelegate:self queue:captureQueue];
-    }
-    return _audioDataOutput;
 }
 
 @end

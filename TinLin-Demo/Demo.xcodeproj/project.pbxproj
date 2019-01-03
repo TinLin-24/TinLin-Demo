@@ -25,6 +25,7 @@
 		04CDE4AF21D5F98F002A1E81 /* TLAVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDE4AE21D5F98F002A1E81 /* TLAVCaptureViewController.m */; };
 		04CE461221D8A2E400ADD4C3 /* TLCameraControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CE461121D8A2E400ADD4C3 /* TLCameraControlView.m */; };
 		04EB396E21D37FDB0064C740 /* SystemCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EB396D21D37FDB0064C740 /* SystemCameraViewController.m */; };
+		04F41B2321DDA19F0087A792 /* TLCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F41B2221DDA19F0087A792 /* TLCaptureManager.m */; };
 		04F69CF521C341DC000D0AFF /* m_pi.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F69CF421C341DC000D0AFF /* m_pi.png */; };
 		04F69CF721C343B5000D0AFF /* Core Animation.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F69CF621C343B5000D0AFF /* Core Animation.png */; };
 		04F69CFA21C38133000D0AFF /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F69CF921C38133000D0AFF /* BaseTableViewController.m */; };
@@ -108,6 +109,8 @@
 		04CE461121D8A2E400ADD4C3 /* TLCameraControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLCameraControlView.m; sourceTree = "<group>"; };
 		04EB396C21D37FDB0064C740 /* SystemCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemCameraViewController.h; sourceTree = "<group>"; };
 		04EB396D21D37FDB0064C740 /* SystemCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemCameraViewController.m; sourceTree = "<group>"; };
+		04F41B2121DDA19F0087A792 /* TLCaptureManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLCaptureManager.h; sourceTree = "<group>"; };
+		04F41B2221DDA19F0087A792 /* TLCaptureManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLCaptureManager.m; sourceTree = "<group>"; };
 		04F69CF421C341DC000D0AFF /* m_pi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = m_pi.png; sourceTree = "<group>"; };
 		04F69CF621C343B5000D0AFF /* Core Animation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Core Animation.png"; sourceTree = "<group>"; };
 		04F69CF821C38133000D0AFF /* BaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
@@ -245,8 +248,25 @@
 			children = (
 				0489425521DCA21B00603D4B /* TLCameraConfig.h */,
 				0489425621DCA21B00603D4B /* TLCameraConfig.m */,
+				04F41B2121DDA19F0087A792 /* TLCaptureManager.h */,
+				04F41B2221DDA19F0087A792 /* TLCaptureManager.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0489425821DCAF9200603D4B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				39866B3920AB00940011C4B7 /* AppDelegate.h */,
+				39866B3A20AB00940011C4B7 /* AppDelegate.m */,
+				39FDED10211938670064CDD9 /* MyOOMDataManager.h */,
+				39FDED0F211938670064CDD9 /* MyOOMDataManager.m */,
+				39866B4220AB00960011C4B7 /* Assets.xcassets */,
+				39866B4420AB00960011C4B7 /* LaunchScreen.storyboard */,
+				39866B4720AB00960011C4B7 /* Info.plist */,
+				39866B4820AB00960011C4B7 /* main.m */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		049FC90E21B6628600AF04FF /* SwipeAction */ = {
@@ -317,6 +337,7 @@
 		04CDE4AB21D5D525002A1E81 /* AVCapture */ = {
 			isa = PBXGroup;
 			children = (
+				04F41B2421DDBD960087A792 /* Manager */,
 				0489425421DCA1FE00603D4B /* Model */,
 				0411D89D21D707EF00C76DB2 /* View */,
 				04CDE4AC21D5F96C002A1E81 /* ViewController */,
@@ -360,6 +381,13 @@
 				04EB396D21D37FDB0064C740 /* SystemCameraViewController.m */,
 			);
 			path = Camera;
+			sourceTree = "<group>";
+		};
+		04F41B2421DDBD960087A792 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		39085921211ECE5100B70962 /* ViewController */ = {
@@ -582,14 +610,7 @@
 				39713F6F21131E3C00F16094 /* Controller */,
 				394B152320EE378A009C879A /* Model */,
 				39713F4A2112ECB400F16094 /* Class */,
-				39866B3920AB00940011C4B7 /* AppDelegate.h */,
-				39866B3A20AB00940011C4B7 /* AppDelegate.m */,
-				39FDED10211938670064CDD9 /* MyOOMDataManager.h */,
-				39FDED0F211938670064CDD9 /* MyOOMDataManager.m */,
-				39866B4220AB00960011C4B7 /* Assets.xcassets */,
-				39866B4420AB00960011C4B7 /* LaunchScreen.storyboard */,
-				39866B4720AB00960011C4B7 /* Info.plist */,
-				39866B4820AB00960011C4B7 /* main.m */,
+				0489425821DCAF9200603D4B /* Supporting Files */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -895,6 +916,7 @@
 				04F69CFA21C38133000D0AFF /* BaseTableViewController.m in Sources */,
 				394B152620EE3881009C879A /* TestImageModel.m in Sources */,
 				39866B3B20AB00940011C4B7 /* AppDelegate.m in Sources */,
+				04F41B2321DDA19F0087A792 /* TLCaptureManager.m in Sources */,
 				39713F68211310E900F16094 /* ImageIOViewController.m in Sources */,
 				39E395D5211D692F00A7AEA8 /* HZWaitingView.m in Sources */,
 				04CE461221D8A2E400ADD4C3 /* TLCameraControlView.m in Sources */,
@@ -1036,7 +1058,7 @@
 				DEVELOPMENT_TEAM = X82PP3A7WP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Demo/Macros/Header.h;
-				INFOPLIST_FILE = Demo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Demo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1123,7 +1145,7 @@
 				DEVELOPMENT_TEAM = X82PP3A7WP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Demo/Macros/Header.h;
-				INFOPLIST_FILE = Demo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Demo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

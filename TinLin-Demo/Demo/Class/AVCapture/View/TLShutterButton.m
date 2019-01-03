@@ -8,11 +8,14 @@
 
 #import "TLShutterButton.h"
 
+// 动画时长
 static const NSTimeInterval kAnimationDuration = 0.33f;
-
-#define kAnimationKey @"kAnimationKey"
-#define kAnimationBackground @"backgroundLayer"
-#define kAnimationBorder @"borderLayer"
+// 区分Animation的Key
+static NSString *kAnimationKey = @"kAnimationKey";
+// 背景Animation的Key
+static NSString *kAnimationBackground = @"backgroundLayer";
+// 进度Animation的Key
+static NSString *kAnimationProgress = @"progressLayer";
 
 @interface TLShutterButton ()<CAAnimationDelegate>
 
@@ -167,7 +170,7 @@ static const NSTimeInterval kAnimationDuration = 0.33f;
 
 - (void)_showRecordingAnimation {
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    [animation setValue:kAnimationBorder forKey:kAnimationKey];
+    [animation setValue:kAnimationProgress forKey:kAnimationKey];
     animation.delegate = self;
     animation.duration = self.longPressMaxDuration;
     animation.fromValue = @0;
@@ -181,7 +184,7 @@ static const NSTimeInterval kAnimationDuration = 0.33f;
 - (void)animationDidStart:(CAAnimation *)anim {
     TLLogFunc;
     NSString *key = [anim valueForKey:kAnimationKey];
-    if ([key isEqualToString:kAnimationBorder])  {
+    if ([key isEqualToString:kAnimationProgress])  {
         !self.didStartLongPress ? : self.didStartLongPress(self);
     }
     NSLog(@"%@",key);
@@ -196,7 +199,7 @@ static const NSTimeInterval kAnimationDuration = 0.33f;
     if ([key isEqualToString:kAnimationBackground]) {
         [self _showRecordingAnimation];
     }
-    else if ([key isEqualToString:kAnimationBorder])  {
+    else if ([key isEqualToString:kAnimationProgress])  {
         NSLog(@"end");
         // 取消手势
         self.longPressGestureRecognizer.enabled = NO;
