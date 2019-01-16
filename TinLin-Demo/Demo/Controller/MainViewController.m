@@ -23,6 +23,8 @@
 #import "HeaderViewController.h"
 #import "SystemCameraViewController.h"
 #import "TLAVCaptureViewController.h"
+#import "TLCoreDataViewController.h"
+#import "PresentBottomViewController.h"
 
 #import "MainCellModel.h"
 
@@ -63,7 +65,9 @@
                            @"Layer",
                            @"HeaderView",
                            @"SystemCamera",
-                           @"相机"];
+                           @"相机",
+                           @"CoreData",
+                           @"PresentBottom"];
     NSArray *classArray = @[[CAAnimationViewController class],
                             [WaterMarkViewController class],
                             [RichTextViewController class],
@@ -79,7 +83,9 @@
                             [LayerViewController class],
                             [HeaderViewController class],
                             [SystemCameraViewController class],
-                            [TLAVCaptureViewController class]];
+                            [TLAVCaptureViewController class],
+                            [TLCoreDataViewController class],
+                            [PresentBottomViewController class]];
 
     [nameArray enumerateObjectsUsingBlock:^(NSString *name, NSUInteger idx, BOOL * _Nonnull stop) {
         Class class = classArray[idx];

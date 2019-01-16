@@ -11,6 +11,11 @@
 		04078A9C21D482E0002E9743 /* UIBezierPath+GetAllPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 04078A9B21D482E0002E9743 /* UIBezierPath+GetAllPoints.m */; };
 		04078AA121D4B938002E9743 /* TLFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04078AA021D4B938002E9743 /* TLFileManager.m */; };
 		0411D8A621D711A000C76DB2 /* TLShutterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0411D8A521D711A000C76DB2 /* TLShutterButton.m */; };
+		04275A9021E74BB00095D99E /* TLCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04275A8F21E74BB00095D99E /* TLCoreDataViewController.m */; };
+		0437503821EF1F2F00FA218A /* PresentBottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0437503721EF1F2F00FA218A /* PresentBottomViewController.m */; };
+		0437503B21EF1F5100FA218A /* TLPresentingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0437503A21EF1F5100FA218A /* TLPresentingViewController.m */; };
+		0437503E21EF1F8100FA218A /* TLPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0437503D21EF1F8100FA218A /* TLPresentationController.m */; };
+		0437504421EF21B400FA218A /* UIViewController+PresentBottom.m in Sources */ = {isa = PBXBuildFile; fileRef = 0437504321EF21B400FA218A /* UIViewController+PresentBottom.m */; };
 		045ABF1621C7430D008C8C5D /* UIViewController+TLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045ABF1521C7430D008C8C5D /* UIViewController+TLNavigationController.m */; };
 		045ABF1A21C78F97008C8C5D /* HeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045ABF1921C78F97008C8C5D /* HeaderViewController.m */; };
 		0489425721DCA21B00603D4B /* TLCameraConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 0489425621DCA21B00603D4B /* TLCameraConfig.m */; };
@@ -79,6 +84,16 @@
 		04078AA021D4B938002E9743 /* TLFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLFileManager.m; sourceTree = "<group>"; };
 		0411D8A421D711A000C76DB2 /* TLShutterButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLShutterButton.h; sourceTree = "<group>"; };
 		0411D8A521D711A000C76DB2 /* TLShutterButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLShutterButton.m; sourceTree = "<group>"; };
+		04275A8E21E74BB00095D99E /* TLCoreDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLCoreDataViewController.h; sourceTree = "<group>"; };
+		04275A8F21E74BB00095D99E /* TLCoreDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLCoreDataViewController.m; sourceTree = "<group>"; };
+		0437503621EF1F2F00FA218A /* PresentBottomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentBottomViewController.h; sourceTree = "<group>"; };
+		0437503721EF1F2F00FA218A /* PresentBottomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentBottomViewController.m; sourceTree = "<group>"; };
+		0437503921EF1F5100FA218A /* TLPresentingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLPresentingViewController.h; sourceTree = "<group>"; };
+		0437503A21EF1F5100FA218A /* TLPresentingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLPresentingViewController.m; sourceTree = "<group>"; };
+		0437503C21EF1F8100FA218A /* TLPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLPresentationController.h; sourceTree = "<group>"; };
+		0437503D21EF1F8100FA218A /* TLPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLPresentationController.m; sourceTree = "<group>"; };
+		0437504221EF21B400FA218A /* UIViewController+PresentBottom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PresentBottom.h"; sourceTree = "<group>"; };
+		0437504321EF21B400FA218A /* UIViewController+PresentBottom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PresentBottom.m"; sourceTree = "<group>"; };
 		045ABF1421C7430D008C8C5D /* UIViewController+TLNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TLNavigationController.h"; sourceTree = "<group>"; };
 		045ABF1521C7430D008C8C5D /* UIViewController+TLNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TLNavigationController.m"; sourceTree = "<group>"; };
 		045ABF1821C78F97008C8C5D /* HeaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderViewController.h; sourceTree = "<group>"; };
@@ -234,6 +249,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0437503521EF1EF500FA218A /* PresentBottom */ = {
+			isa = PBXGroup;
+			children = (
+				0437503621EF1F2F00FA218A /* PresentBottomViewController.h */,
+				0437503721EF1F2F00FA218A /* PresentBottomViewController.m */,
+				0437503921EF1F5100FA218A /* TLPresentingViewController.h */,
+				0437503A21EF1F5100FA218A /* TLPresentingViewController.m */,
+				0437503C21EF1F8100FA218A /* TLPresentationController.h */,
+				0437503D21EF1F8100FA218A /* TLPresentationController.m */,
+				0437504221EF21B400FA218A /* UIViewController+PresentBottom.h */,
+				0437504321EF21B400FA218A /* UIViewController+PresentBottom.m */,
+			);
+			path = PresentBottom;
+			sourceTree = "<group>";
+		};
 		045ABF1721C78F53008C8C5D /* TableHeaderView */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +402,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		04D1F0FD21E72276008F4D25 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				04275A8E21E74BB00095D99E /* TLCoreDataViewController.h */,
+				04275A8F21E74BB00095D99E /* TLCoreDataViewController.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		04EB396B21D37FC70064C740 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +482,8 @@
 		39713F4A2112ECB400F16094 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				0437503521EF1EF500FA218A /* PresentBottom */,
+				04D1F0FD21E72276008F4D25 /* CoreData */,
 				04CDE4AB21D5D525002A1E81 /* AVCapture */,
 				04EB396B21D37FC70064C740 /* Camera */,
 				045ABF1721C78F53008C8C5D /* TableHeaderView */,
@@ -869,10 +910,13 @@
 			files = (
 				39FDED15211942B90064CDD9 /* CroppedFilletViewController.m in Sources */,
 				39085928211ECEF400B70962 /* UFProgressLayer.m in Sources */,
+				0437504421EF21B400FA218A /* UIViewController+PresentBottom.m in Sources */,
 				39713F6021130E6D00F16094 /* WaterMarkViewController.m in Sources */,
 				0411D8A621D711A000C76DB2 /* TLShutterButton.m in Sources */,
 				3916856321144A3E0016AC24 /* WatermarkTool.m in Sources */,
+				0437503B21EF1F5100FA218A /* TLPresentingViewController.m in Sources */,
 				39713F6D2113153600F16094 /* ImageTableViewCell.m in Sources */,
+				0437503821EF1F2F00FA218A /* PresentBottomViewController.m in Sources */,
 				04078AA121D4B938002E9743 /* TLFileManager.m in Sources */,
 				39713F502112EDAF00F16094 /* MainCellModel.m in Sources */,
 				39FDED11211938670064CDD9 /* MyOOMDataManager.m in Sources */,
@@ -902,8 +946,10 @@
 				39713F5D21130E1800F16094 /* BaseViewController.m in Sources */,
 				04EB396E21D37FDB0064C740 /* SystemCameraViewController.m in Sources */,
 				39E3CC0E211A7B8F008EDCA8 /* StickerBaseView.m in Sources */,
+				0437503E21EF1F8100FA218A /* TLPresentationController.m in Sources */,
 				39DC51962117DE59005D2F3B /* PropertyAnimatorViewController.m in Sources */,
 				39713F642113104300F16094 /* RichTextViewController.m in Sources */,
+				04275A9021E74BB00095D99E /* TLCoreDataViewController.m in Sources */,
 				049FC91421B673DF00AF04FF /* GYStickerView.m in Sources */,
 				04CDE43621D5C539002A1E81 /* MBProgressHUD+TLExtension.m in Sources */,
 				39713F5421130CAA00F16094 /* CAAnimationViewController.m in Sources */,

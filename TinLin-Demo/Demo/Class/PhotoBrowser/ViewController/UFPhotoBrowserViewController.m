@@ -68,7 +68,7 @@ static const CGFloat kPageIndicatorTopSpacing = 40;
         /* 设置转场风格 */
         self.modalPresentationStyle = UIModalPresentationCustom;
         self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-        
+
         /* 保存模型 */
         self.photoItems = [NSMutableArray arrayWithArray:photoItems];
         /* 记录当前的Index */
@@ -721,11 +721,11 @@ static const CGFloat kPageIndicatorTopSpacing = 40;
     NSInteger offset = scrollView.contentOffset.x >= contentOffsetX ? 1 : -1;
     NSLog(@"方向：%zd %zd",offset,self.currentPage+offset);
     
-//    [self updateReusableItemViews];
-//    [self configItemViews];
+    [self updateReusableItemViews];
+    [self configItemViews];
 
-    [self p_updateReusableItemViews:self.currentPage+offset];
-    [self p_configItemViews:self.currentPage+offset];
+//    [self p_updateReusableItemViews:self.currentPage+offset];
+//    [self p_configItemViews:self.currentPage+offset];
 }
 
 
