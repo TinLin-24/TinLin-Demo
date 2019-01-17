@@ -1,5 +1,5 @@
 //
-//  TLPresentationController.h
+//  TLShareViewController.h
 //  Demo
 //
 //  Created by Mac on 2019/1/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TLPresentationController : UIPresentationController <UIViewControllerTransitioningDelegate>
+@interface TLShareViewController : UIViewController
 
 @end
