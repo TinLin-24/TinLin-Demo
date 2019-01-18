@@ -24,6 +24,8 @@
 		04C8A6D721B7705F00D7B7ED /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C8A6D621B7705F00D7B7ED /* MapViewController.m */; };
 		04C8A6E821B7D10900D7B7ED /* TLAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C8A6E721B7D10900D7B7ED /* TLAnnotationView.m */; };
 		04C8A6EE21B7D13100D7B7ED /* TLAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C8A6ED21B7D13100D7B7ED /* TLAnnotation.m */; };
+		04CBBF1E21F168460084ED1F /* TLMenuPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBBF1D21F168460084ED1F /* TLMenuPresentationController.m */; };
+		04CBBF2121F1A71B0084ED1F /* TLMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBBF2021F1A71B0084ED1F /* TLMenuViewController.m */; };
 		04CDE43521D5C539002A1E81 /* UIAlertController+TLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDE43321D5C539002A1E81 /* UIAlertController+TLExtension.m */; };
 		04CDE43621D5C539002A1E81 /* MBProgressHUD+TLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDE43421D5C539002A1E81 /* MBProgressHUD+TLExtension.m */; };
 		04CDE4AF21D5F98F002A1E81 /* TLAVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDE4AE21D5F98F002A1E81 /* TLAVCaptureViewController.m */; };
@@ -112,6 +114,10 @@
 		04C8A6E721B7D10900D7B7ED /* TLAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLAnnotationView.m; sourceTree = "<group>"; };
 		04C8A6EC21B7D13100D7B7ED /* TLAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLAnnotation.h; sourceTree = "<group>"; };
 		04C8A6ED21B7D13100D7B7ED /* TLAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLAnnotation.m; sourceTree = "<group>"; };
+		04CBBF1C21F168460084ED1F /* TLMenuPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLMenuPresentationController.h; sourceTree = "<group>"; };
+		04CBBF1D21F168460084ED1F /* TLMenuPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLMenuPresentationController.m; sourceTree = "<group>"; };
+		04CBBF1F21F1A71B0084ED1F /* TLMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLMenuViewController.h; sourceTree = "<group>"; };
+		04CBBF2021F1A71B0084ED1F /* TLMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLMenuViewController.m; sourceTree = "<group>"; };
 		04CDE43121D5C539002A1E81 /* MBProgressHUD+TLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+TLExtension.h"; sourceTree = "<group>"; };
 		04CDE43221D5C539002A1E81 /* UIAlertController+TLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+TLExtension.h"; sourceTree = "<group>"; };
 		04CDE43321D5C539002A1E81 /* UIAlertController+TLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+TLExtension.m"; sourceTree = "<group>"; };
@@ -260,6 +266,10 @@
 				0437504621EF325E00FA218A /* TLShareViewController.m */,
 				04E9AFFD21F0521B00C7FBFC /* TLCustomBottomViewController.h */,
 				04E9AFFE21F0521B00C7FBFC /* TLCustomBottomViewController.m */,
+				04CBBF1C21F168460084ED1F /* TLMenuPresentationController.h */,
+				04CBBF1D21F168460084ED1F /* TLMenuPresentationController.m */,
+				04CBBF1F21F1A71B0084ED1F /* TLMenuViewController.h */,
+				04CBBF2021F1A71B0084ED1F /* TLMenuViewController.m */,
 			);
 			path = PresentBottom;
 			sourceTree = "<group>";
@@ -937,6 +947,7 @@
 				04F69CFD21C392FF000D0AFF /* SwipeActionViewController.m in Sources */,
 				04A405CF21C0BEA400CD2998 /* WaveViewController.m in Sources */,
 				39085939211EE4CD00B70962 /* UFPhotoBrowserViewController.m in Sources */,
+				04CBBF2121F1A71B0084ED1F /* TLMenuViewController.m in Sources */,
 				04C8A6E821B7D10900D7B7ED /* TLAnnotationView.m in Sources */,
 				04C8A6EE21B7D13100D7B7ED /* TLAnnotation.m in Sources */,
 				04CDE43521D5C539002A1E81 /* UIAlertController+TLExtension.m in Sources */,
@@ -950,6 +961,7 @@
 				39DC51962117DE59005D2F3B /* PropertyAnimatorViewController.m in Sources */,
 				39713F642113104300F16094 /* RichTextViewController.m in Sources */,
 				04275A9021E74BB00095D99E /* TLCoreDataViewController.m in Sources */,
+				04CBBF1E21F168460084ED1F /* TLMenuPresentationController.m in Sources */,
 				049FC91421B673DF00AF04FF /* GYStickerView.m in Sources */,
 				04CDE43621D5C539002A1E81 /* MBProgressHUD+TLExtension.m in Sources */,
 				39713F5421130CAA00F16094 /* CAAnimationViewController.m in Sources */,

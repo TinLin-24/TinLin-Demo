@@ -54,12 +54,14 @@
         [btnArray addObject:btn];
     }
     CGFloat width = (self.view.width - 10*(icons.count+1))/icons.count;
+    // 排列方向、视图的在方向上的固定长度、头部内边距、尾部内边距
     [btnArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:width leadSpacing:10.f tailSpacing:10.f];
     [btnArray mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.view);
         make.height.mas_equalTo(width);
     }];
     
+    // 排列方向、视图之间的边距、头部内边距、尾部内边距
 //    [btnArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:10.f leadSpacing:15.f tailSpacing:15.f];
 //    [btnArray mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.top.equalTo(self.view).offset(5.f);

@@ -1,16 +1,16 @@
 //
-//  TLPresentationController.m
+//  TLMenuPresentationController.m
 //  Demo
 //
-//  Created by Mac on 2019/1/16.
+//  Created by Mac on 2019/1/18.
 //  Copyright © 2019 TinLin. All rights reserved.
 //
 
-#import "TLPresentationController.h"
+#import "TLMenuPresentationController.h"
 
-#define CORNER_RADIUS 16.f
+#define CORNER_RADIUS 8.f
 
-@interface TLPresentationController () <UIViewControllerAnimatedTransitioning>
+@interface TLMenuPresentationController () <UIViewControllerAnimatedTransitioning>
 
 @property(nonatomic, strong) UIView *maskView;
 
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation TLPresentationController
+@implementation TLMenuPresentationController
 
 #pragma mark - Override
 
@@ -38,31 +38,19 @@
 - (void)presentationTransitionWillBegin {
     //取得原来的presentedView，
     UIView *presentedViewControllerView = [super presentedView];
-
+    
     {
         //创建用来包裹的View
         UIView *presentationWrapperView = [[UIView alloc] initWithFrame:self.frameOfPresentedViewInContainerView];
-        presentationWrapperView.layer.shadowOpacity = 0.22f;
-        presentationWrapperView.layer.shadowRadius = 13.f;
-        presentationWrapperView.layer.shadowOffset = CGSizeMake(0, -3.f);
+        presentationWrapperView.layer.cornerRadius = CORNER_RADIUS;
+        presentationWrapperView.layer.masksToBounds = YES;
         self.presentationWrappingView = presentationWrapperView;
-        
-        // presentationRoundedCornerView is CORNER_RADIUS points taller than the
-        // height of the presented view controller's view.  This is because
-        // the cornerRadius is applied to all corners of the view.  Since the
-        // effect calls for only the top two corners to be rounded we size
-        // the view such that the bottom CORNER_RADIUS points lie below
-        // the bottom edge of the screen.
-        UIView *presentationRoundedCornerView = [[UIView alloc] initWithFrame:UIEdgeInsetsInsetRect(presentationWrapperView.bounds, UIEdgeInsetsMake(0, 0, -CORNER_RADIUS, 0))];
-        presentationRoundedCornerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        presentationRoundedCornerView.layer.cornerRadius = CORNER_RADIUS;
-        presentationRoundedCornerView.layer.masksToBounds = YES;
         
         // To undo the extra height added to presentationRoundedCornerView,
         // presentedViewControllerWrapperView is inset by CORNER_RADIUS points.
         // This also matches the size of presentedViewControllerWrapperView's
         // bounds to the size of -frameOfPresentedViewInContainerView.
-        UIView *presentedViewControllerWrapperView = [[UIView alloc] initWithFrame:UIEdgeInsetsInsetRect(presentationRoundedCornerView.bounds, UIEdgeInsetsMake(0, 0, CORNER_RADIUS, 0))];
+        UIView *presentedViewControllerWrapperView = [[UIView alloc] initWithFrame:presentationWrapperView.bounds];
         presentedViewControllerWrapperView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
         // Add presentedViewControllerView -> presentedViewControllerWrapperView.
@@ -70,22 +58,21 @@
         presentedViewControllerView.frame = presentedViewControllerWrapperView.bounds;
         [presentedViewControllerWrapperView addSubview:presentedViewControllerView];
         
-        // Add presentedViewControllerWrapperView -> presentationRoundedCornerView.
-        [presentationRoundedCornerView addSubview:presentedViewControllerWrapperView];
-        
-        // Add presentationRoundedCornerView -> presentationWrapperView.
-        [presentationWrapperView addSubview:presentationRoundedCornerView];
+        // Add presentedViewControllerWrapperView -> presentationWrapperView.
+        [presentationWrapperView addSubview:presentedViewControllerWrapperView];
     }
     
     !self.containerView ? : [self.containerView addSubview:self.maskView];
-
+    
     // Get the transition coordinator for the presentation so we can
     // fade in the dimmingView alongside the presentation animation.
     id<UIViewControllerTransitionCoordinator> transitionCoordinator = self.presentingViewController.transitionCoordinator;
     
     self.maskView.alpha = 0.f;
+    self.presentationWrappingView.alpha = 0.f;
     [transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
         self.maskView.alpha = 0.5f;
+        self.presentationWrappingView.alpha = 1.f;
     } completion:NULL];
 }
 
@@ -93,6 +80,7 @@
     id<UIViewControllerTransitionCoordinator> transitionCoordinator = self.presentingViewController.transitionCoordinator;
     [transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
         self.maskView.alpha = 0.f;
+        self.presentationWrappingView.alpha = 0.f;
     } completion:NULL];
 }
 
@@ -104,47 +92,6 @@
         self.maskView = nil;
         self.presentationWrappingView = nil;
     }
-}
-
-#pragma mark - Layout
-
-- (void)preferredContentSizeDidChangeForChildContentContainer:(id<UIContentContainer>)container {
-    [super preferredContentSizeDidChangeForChildContentContainer:container];
-    
-    if (container == self.presentedViewController)
-        [self.containerView setNeedsLayout];
-}
-
-- (CGSize)sizeForChildContentContainer:(id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
-    if (container == self.presentedViewController)
-        return ((UIViewController*)container).preferredContentSize;
-    else
-        return [super sizeForChildContentContainer:container withParentContainerSize:parentSize];
-}
-
-- (CGRect)frameOfPresentedViewInContainerView {    
-    CGRect containerViewBounds = self.containerView.bounds;
-    CGSize presentedViewContentSize = [self sizeForChildContentContainer:self.presentedViewController withParentContainerSize:containerViewBounds.size];
-    
-    // The presented view extends presentedViewContentSize.height points from
-    // the bottom edge of the screen.
-    CGRect presentedViewControllerFrame = containerViewBounds;
-    presentedViewControllerFrame.size.height = presentedViewContentSize.height;
-    presentedViewControllerFrame.origin.y = CGRectGetMaxY(containerViewBounds) - presentedViewContentSize.height;
-    return presentedViewControllerFrame;
-}
-
-- (void)containerViewWillLayoutSubviews {
-    [super containerViewWillLayoutSubviews];
-    
-    self.maskView.frame = self.containerView.bounds;
-    self.presentationWrappingView.frame = self.frameOfPresentedViewInContainerView;
-}
-
-#pragma mark - Tap Gesture Recognizer
-
-- (void)handleTapGestureRecognizer:(UITapGestureRecognizer *)gestureRecognizer {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 #pragma mark - UIViewControllerAnimatedTransitioning
@@ -166,21 +113,7 @@
     //      fromView = The presented view.
     //      toView   = The presenting view.
     UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
-    // If NO is returned from -shouldRemovePresentersView, the view associated
-    // with UITransitionContextFromViewKey is nil during presentation.  This
-    // intended to be a hint that your animator should NOT be manipulating the
-    // presenting view controller's view.  For a dismissal, the -presentedView
-    // is returned.
-    //
-    // Why not allow the animator manipulate the presenting view controller's
-    // view at all times?  First of all, if the presenting view controller's
-    // view is going to stay visible after the animation finishes during the
-    // whole presentation life cycle there is no need to animate it at all — it
-    // just stays where it is.  Second, if the ownership for that view
-    // controller is transferred to the presentation controller, the
-    // presentation controller will most likely not know how to layout that
-    // view controller's view when needed, for example when the orientation
-    // changes, but the original owner of the presenting view controller does.
+    
     UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
     
     BOOL isPresenting = (fromViewController == self.presentingViewController);
@@ -201,33 +134,103 @@
     // presenting view controller's view was not removed).
     [containerView addSubview:toView];
     
+    /*
+    CGSize size = CGSizeMake(self.frameOfPresentedViewInContainerView.size.width/3, self.frameOfPresentedViewInContainerView.size.height/3);
+    
+    CGFloat originX = CGRectGetMaxX(self.frameOfPresentedViewInContainerView) - size.width;
+    CGFloat originY = self.frameOfPresentedViewInContainerView.origin.y;
+    CGPoint origin = CGPointMake(originX, originY);
+
     if (isPresenting) {
-        toViewInitialFrame.origin = CGPointMake(CGRectGetMinX(containerView.bounds), CGRectGetMaxY(containerView.bounds));
-        toViewInitialFrame.size = toViewFinalFrame.size;
+        toViewInitialFrame.origin = origin;
+        toViewInitialFrame.size = size;
         toView.frame = toViewInitialFrame;
     } else {
-        // Because our presentation wraps the presented view controller's view
-        // in an intermediate view hierarchy, it is more accurate to rely
-        // on the current frame of fromView than fromViewInitialFrame as the
-        // initial frame (though in this example they will be the same).
-        fromViewFinalFrame = CGRectOffset(fromView.frame, 0, CGRectGetHeight(fromView.frame));
+        fromViewFinalFrame.origin = origin;
+        fromViewFinalFrame.size = size;
     }
     
     NSTimeInterval transitionDuration = [self transitionDuration:transitionContext];
     
     [UIView animateWithDuration:transitionDuration animations:^{
-        if (isPresenting)
+        if (isPresenting) {
             toView.frame = toViewFinalFrame;
-        else
+        } else {
             fromView.frame = fromViewFinalFrame;
+        }
         
     } completion:^(BOOL finished) {
-        // When we complete, tell the transition context
-        // passing along the BOOL that indicates whether the transition
-        // finished or not.
         BOOL wasCancelled = [transitionContext transitionWasCancelled];
         [transitionContext completeTransition:!wasCancelled];
     }];
+    */
+    
+    
+    CGAffineTransform transform = CGAffineTransformMakeScale(.5f, .5f);;
+
+    if (isPresenting) {
+        toView.frame = toViewFinalFrame;
+        toView.transform = transform;
+        toView.layer.anchorPoint = CGPointMake(1, 0);
+    } else {
+        
+    }
+    
+    NSTimeInterval transitionDuration = [self transitionDuration:transitionContext];
+
+    [UIView animateWithDuration:transitionDuration animations:^{
+        if (isPresenting) {
+            toView.transform = CGAffineTransformIdentity;
+        } else {
+            fromView.transform = transform;
+        }
+    } completion:^(BOOL finished) {
+        BOOL wasCancelled = [transitionContext transitionWasCancelled];
+        [transitionContext completeTransition:!wasCancelled];
+    }];
+    
+}
+
+#pragma mark - Layout
+
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id<UIContentContainer>)container {
+    [super preferredContentSizeDidChangeForChildContentContainer:container];
+    
+    if (container == self.presentedViewController)
+        [self.containerView setNeedsLayout];
+}
+
+- (CGSize)sizeForChildContentContainer:(id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
+    if (container == self.presentedViewController)
+        return ((UIViewController*)container).preferredContentSize;
+    else
+        return [super sizeForChildContentContainer:container withParentContainerSize:parentSize];
+}
+
+- (CGRect)frameOfPresentedViewInContainerView {
+    CGRect containerViewBounds = self.containerView.bounds;
+    CGSize presentedViewContentSize = [self sizeForChildContentContainer:self.presentedViewController withParentContainerSize:containerViewBounds.size];
+    
+    // The presented view extends presentedViewContentSize.height points from
+    // the bottom edge of the screen.
+    CGRect presentedViewControllerFrame = containerViewBounds;
+    presentedViewControllerFrame.size = presentedViewContentSize;
+    presentedViewControllerFrame.origin.x = containerViewBounds.size.width - 20.f - presentedViewContentSize.width;
+    presentedViewControllerFrame.origin.y = TLTopMargin(24.f);
+    return presentedViewControllerFrame;
+}
+
+- (void)containerViewWillLayoutSubviews {
+    [super containerViewWillLayoutSubviews];
+    
+    self.maskView.frame = self.containerView.bounds;
+    self.presentationWrappingView.frame = self.frameOfPresentedViewInContainerView;
+}
+
+#pragma mark - Tap Gesture Recognizer
+
+- (void)handleTapGestureRecognizer:(UITapGestureRecognizer *)gestureRecognizer {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate

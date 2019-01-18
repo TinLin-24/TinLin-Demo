@@ -9,8 +9,10 @@
 #import "PresentBottomViewController.h"
 #import "TLShareViewController.h"
 #import "TLCustomBottomViewController.h"
+#import "TLMenuViewController.h"
 
 #import "TLPresentationController.h"
+#import "TLMenuPresentationController.h"
 
 @interface PresentBottomViewController ()
 
@@ -44,8 +46,16 @@
     [customBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     customBtn.frame = CGRectMake(20, TLTopMargin(164.f), 100, 44);
     [self.view addSubview:customBtn];
-    
+
     [customBtn addTarget:self action:@selector(handleCustomBtnEvent:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [menuBtn setTitle:@"Menu" forState:UIControlStateNormal];
+    [menuBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    menuBtn.frame = CGRectMake(20, TLTopMargin(204.f), 100, 44);
+    [self.view addSubview:menuBtn];
+    
+    [menuBtn addTarget:self action:@selector(handleMenuBtnEvent:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)handleBtnEvent:(id)sender {
@@ -67,6 +77,13 @@
 - (void)handleCustomBtnEvent:(id)sender {
     TLCustomBottomViewController *viewController = [[TLCustomBottomViewController alloc] init];
     TLPresentationController *presentationController = [[TLPresentationController alloc] initWithPresentedViewController:viewController presentingViewController:self];
+    viewController.transitioningDelegate = presentationController;
+    [self presentViewController:viewController animated:YES completion:NULL];
+}
+
+- (void)handleMenuBtnEvent:(id)sender {
+    TLMenuViewController *viewController = [[TLMenuViewController alloc] init];
+    TLMenuPresentationController *presentationController = [[TLMenuPresentationController alloc] initWithPresentedViewController:viewController presentingViewController:self];
     viewController.transitioningDelegate = presentationController;
     [self presentViewController:viewController animated:YES completion:NULL];
 }

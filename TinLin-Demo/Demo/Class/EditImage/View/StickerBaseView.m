@@ -24,7 +24,7 @@
 
 @end
 
-@implementation StickerBaseView{
+@implementation StickerBaseView {
     CGFloat _scale;
     CGFloat _arg;
     
@@ -119,7 +119,7 @@
 }
 
 - (void)editBtnClick:(UIButton *)sender{
-    
+    self.transform = CGAffineTransformIdentity;
 }
 
 /**
@@ -127,46 +127,18 @@
  */
 - (void)transformBtnPanGestureRecognizerEvent:(UIPanGestureRecognizer *)panGestureRecognizer{
     
-    CGPoint p = [panGestureRecognizer translationInView:self.superview];
+    CGPoint translationPoint = [panGestureRecognizer translationInView:self.superview];
+    CGPoint locationPoint = [panGestureRecognizer locationInView:self.superview];
     
-    static CGFloat tmpR = 1;
-    static CGFloat tmpA = 0;
-    if(panGestureRecognizer.state == UIGestureRecognizerStateBegan){
-        /* 转换一开始点击的点的位置，即按钮 */
-        _initialPoint = [self.superview convertPoint:self.transformBtn.center fromView:self];
-        
-        CGPoint p = CGPointMake(_initialPoint.x - self.center.x, _initialPoint.y - self.center.y);
-        tmpR = sqrt(p.x*p.x + p.y*p.y);
-        tmpA = atan2(p.y, p.x);
-        
-        _initialArg = _arg;
-        _initialScale = _scale;
+    float an = atan2(locationPoint.y-self.center.y, locationPoint.x-self.center.x);
+
+    if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        return;
     }
     
-    p = CGPointMake(_initialPoint.x + p.x - self.center.x, _initialPoint.y + p.y - self.center.y);
-    CGFloat R = sqrt(p.x*p.x + p.y*p.y);
-    CGFloat arg = atan2(p.y, p.x);
-    
-    _arg   = _initialArg + arg - tmpA;
-    [self setScale:MAX(_initialScale * R / tmpR, 0.3)];
-}
-
-- (void)setScale:(CGFloat)scale{
-    _scale = scale;
-    _scaleValue = scale;
-    
-//    self.transform = CGAffineTransformIdentity;
-    self.transform = CGAffineTransformMakeScale(_scale, _scale);
-    self.transform = CGAffineTransformMakeRotation(_arg);
-    
-//    CGRect frame = [self.superview convertRect:self.contentView.frame fromView:self];
-//    CGFloat left = frame.origin.x - margin;
-//    CGFloat top = frame.origin.y - margin;
-//    CGFloat width = frame.size.width + margin*2;
-//    CGFloat height = frame.size.height + margin*2;
-//    NSLog(@"(origin = (x = %f, y = %f), size = (width = %f, height = %f))",frame.origin.x,frame.origin.y,frame.size.width,frame.size.height);
-//    self.size = CGSizeMake(width, height);
-    
+    NSLog(@"%f",an);
+    self.transform = CGAffineTransformMakeRotation(an-M_PI_4);
+//    NSLog(@"%@",NSStringFromCGPoint(locationPoint));
 }
 
 #pragma mark - UIGestureRecognizerDelegate

@@ -40,8 +40,9 @@
 #pragma mark - 设置子控件
 
 - (void)p_setupSubViews{
-//    StickerBaseView *view = [[StickerBaseView alloc] initWithFrame:CGRectMake(100, 100, 150, 150)];
-//    [self.view addSubview:view];
+    StickerBaseView *tlview = [[StickerBaseView alloc] initWithFrame:CGRectMake(100, 100, 150, 150)];
+    tlview.backgroundColor = [UIColor redColor];
+    [self.view addSubview:tlview];
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"qrcode"]];
     imageView.frame = CGRectMake(100, 100, 150, 150);
