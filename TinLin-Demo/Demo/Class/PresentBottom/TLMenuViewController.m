@@ -37,11 +37,18 @@
         [btn setTitle:icon forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self.view addSubview:btn];
+        
+        [btn addTarget:self action:@selector(handleBtnEvent:) forControlEvents:UIControlEventTouchUpInside];
     }
     [self.view.subviews mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedSpacing:0.f leadSpacing:0.f tailSpacing:0.f];
     [self.view.subviews mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
     }];
 }
+
+- (void)handleBtnEvent:(UIButton *)sender {
+    NSLog(@"%@",sender.titleLabel.text);
+}
+
 
 @end
