@@ -38,6 +38,7 @@
 		04F69CFA21C38133000D0AFF /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F69CF921C38133000D0AFF /* BaseTableViewController.m */; };
 		04F69CFD21C392FF000D0AFF /* SwipeActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F69CFC21C392FF000D0AFF /* SwipeActionViewController.m */; };
 		04F69D0421C3B0FF000D0AFF /* TLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F69D0321C3B0FF000D0AFF /* TLNavigationController.m */; };
+		04F8DF9421F5BDA40059B04C /* StickerViewOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F8DF9321F5BDA40059B04C /* StickerViewOne.m */; };
 		04FC6FB721C252800079C54F /* layer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04FC6FB621C252800079C54F /* layer.jpg */; };
 		39085928211ECEF400B70962 /* UFProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 39085927211ECEF400B70962 /* UFProgressLayer.m */; };
 		3908592D211ED18300B70962 /* UFPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3908592C211ED18300B70962 /* UFPhotoModel.m */; };
@@ -140,6 +141,8 @@
 		04F69CFC21C392FF000D0AFF /* SwipeActionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwipeActionViewController.m; sourceTree = "<group>"; };
 		04F69D0221C3B0FF000D0AFF /* TLNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLNavigationController.h; sourceTree = "<group>"; };
 		04F69D0321C3B0FF000D0AFF /* TLNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLNavigationController.m; sourceTree = "<group>"; };
+		04F8DF9221F5BDA40059B04C /* StickerViewOne.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StickerViewOne.h; sourceTree = "<group>"; };
+		04F8DF9321F5BDA40059B04C /* StickerViewOne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StickerViewOne.m; sourceTree = "<group>"; };
 		04FC6FB621C252800079C54F /* layer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = layer.jpg; sourceTree = "<group>"; };
 		2840A74534BA7FCDDBEA480F /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		2F5F9961D5214442C3F6137E /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -728,6 +731,8 @@
 				049FC91321B673DF00AF04FF /* GYStickerView.m */,
 				39E3CC0C211A7B8F008EDCA8 /* StickerBaseView.h */,
 				39E3CC0D211A7B8F008EDCA8 /* StickerBaseView.m */,
+				04F8DF9221F5BDA40059B04C /* StickerViewOne.h */,
+				04F8DF9321F5BDA40059B04C /* StickerViewOne.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -949,6 +954,7 @@
 				39085939211EE4CD00B70962 /* UFPhotoBrowserViewController.m in Sources */,
 				04CBBF2121F1A71B0084ED1F /* TLMenuViewController.m in Sources */,
 				04C8A6E821B7D10900D7B7ED /* TLAnnotationView.m in Sources */,
+				04F8DF9421F5BDA40059B04C /* StickerViewOne.m in Sources */,
 				04C8A6EE21B7D13100D7B7ED /* TLAnnotation.m in Sources */,
 				04CDE43521D5C539002A1E81 /* UIAlertController+TLExtension.m in Sources */,
 				045ABF1A21C78F97008C8C5D /* HeaderViewController.m in Sources */,

@@ -9,6 +9,7 @@
 #import "EditImageViewController.h"
 #import "StickerBaseView.h"
 #import "GYStickerView.h"
+#import "StickerViewOne.h"
 
 @interface EditImageViewController ()
 
@@ -40,17 +41,17 @@
 #pragma mark - 设置子控件
 
 - (void)p_setupSubViews{
-    StickerBaseView *tlview = [[StickerBaseView alloc] initWithFrame:CGRectMake(100, 100, 150, 150)];
-    tlview.backgroundColor = [UIColor redColor];
+    StickerBaseView *tlview = [[StickerViewOne alloc] initWithFrame:CGRectMake(100, 100, 150, 150)];
+//    tlview.backgroundColor = [UIColor redColor];
     [self.view addSubview:tlview];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"qrcode"]];
-    imageView.frame = CGRectMake(100, 100, 150, 150);
-    GYStickerView *view = [[GYStickerView alloc] initWithContentView:imageView];
-    view.ctrlType = GYStickerViewCtrlTypeOne;
-    [view setRemoveCtrlImage:[UIImage imageNamed:@"camera_sticker_off"]];
-    [view setTransformCtrlImage:[UIImage imageNamed:@"camera_sticker_miter"]];
-    [self.view addSubview:view];
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"qrcode"]];
+//    imageView.frame = CGRectMake(100, 100, 150, 150);
+//    GYStickerView *view = [[GYStickerView alloc] initWithContentView:imageView];
+//    view.ctrlType = GYStickerViewCtrlTypeOne;
+//    [view setRemoveCtrlImage:[UIImage imageNamed:@"camera_sticker_off"]];
+//    [view setTransformCtrlImage:[UIImage imageNamed:@"camera_sticker_miter"]];
+//    [self.view addSubview:view];
 }
 
 @end

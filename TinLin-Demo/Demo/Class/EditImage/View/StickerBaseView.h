@@ -13,13 +13,7 @@
 /**
  contentView 是用于子类添加自定义的样式的View
  */
-@property (nonatomic ,readwrite)UIView *contentView;
+@property(nonatomic, strong, readonly) UIView *contentView;
 
-/**
- 设置允许的最小size
- */
-@property (nonatomic ,assign)CGSize minViewSize;
-
-@property (readwrite) CGFloat scaleValue;
 
 @end
