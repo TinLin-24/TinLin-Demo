@@ -16,8 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.view.backgroundColor = [UIColor whiteColor];
     
     [self setupSubViews];
 }
@@ -27,22 +25,36 @@
 //}
 
 - (void)setupSubViews {
-    
     NSArray *icons = @[@"friends",@"QQ",@"qzone",@"sina",@"tencent_weibo",@"wechat"];
     
-    self.preferredContentSize = CGSizeMake(150.f, 44.f*icons.count);
-
+    CGFloat bgViewHeight = 44.f*icons.count;
+    CGFloat arrowHeight = 5.f;
+    
+    self.preferredContentSize = CGSizeMake(150.f, bgViewHeight+arrowHeight);
+    
+    CGFloat arrowWH = arrowHeight*2*sqrtf(2);
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(120.f, 0, arrowWH, arrowWH)];
+    view.backgroundColor = [UIColor whiteColor];
+    view.transform = CGAffineTransformMakeRotation(M_PI_4);
+    [self.view addSubview:view];
+    
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, arrowHeight, 150.f, bgViewHeight)];
+    bgView.backgroundColor = [UIColor whiteColor];
+    bgView.layer.masksToBounds = YES;
+    bgView.layer.cornerRadius = 6.f;
+    [self.view addSubview:bgView];
+    
     for (NSString *icon in icons) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setTitle:icon forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [self.view addSubview:btn];
+        [bgView addSubview:btn];
         
         [btn addTarget:self action:@selector(handleBtnEvent:) forControlEvents:UIControlEventTouchUpInside];
     }
-    [self.view.subviews mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedSpacing:0.f leadSpacing:0.f tailSpacing:0.f];
-    [self.view.subviews mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.view);
+    [bgView.subviews mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedSpacing:0.f leadSpacing:0.f tailSpacing:0.f];
+    [bgView.subviews mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(bgView);
     }];
 }
 

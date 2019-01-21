@@ -53,6 +53,7 @@
     [menuBtn setTitle:@"Menu" forState:UIControlStateNormal];
     [menuBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     menuBtn.frame = CGRectMake(20, TLTopMargin(204.f), 100, 44);
+    menuBtn.centerX = self.view.centerX;
     [self.view addSubview:menuBtn];
     
     [menuBtn addTarget:self action:@selector(handleMenuBtnEvent:) forControlEvents:UIControlEventTouchUpInside];
@@ -81,9 +82,12 @@
     [self presentViewController:viewController animated:YES completion:NULL];
 }
 
-- (void)handleMenuBtnEvent:(id)sender {
+- (void)handleMenuBtnEvent:(UIButton *)sender {
     TLMenuViewController *viewController = [[TLMenuViewController alloc] init];
     TLMenuPresentationController *presentationController = [[TLMenuPresentationController alloc] initWithPresentedViewController:viewController presentingViewController:self];
+    presentationController.anchorPoint = CGPointMake(.9f, 0);
+    presentationController.arrowPoint = CGPointMake(sender.center.x, CGRectGetMaxY(sender.frame));
+    
     viewController.transitioningDelegate = presentationController;
     [self presentViewController:viewController animated:YES completion:NULL];
 }

@@ -10,6 +10,8 @@
 
 @interface TLMenuPresentationController : UIPresentationController <UIViewControllerTransitioningDelegate>
 
+@property(nonatomic, assign) CGPoint anchorPoint;
 
+@property(nonatomic, assign) CGPoint arrowPoint;
 
 @end

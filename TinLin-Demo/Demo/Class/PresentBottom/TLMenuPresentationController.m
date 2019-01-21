@@ -26,6 +26,7 @@
     self = [super initWithPresentedViewController:presentedViewController presentingViewController:presentingViewController];
     if (self) {
         presentedViewController.modalPresentationStyle = UIModalPresentationCustom;
+        self.anchorPoint = CGPointMake(.9f, 0);
     }
     return self;
 }
@@ -36,14 +37,15 @@
 }
 
 - (void)presentationTransitionWillBegin {
+    
     //取得原来的presentedView，
     UIView *presentedViewControllerView = [super presentedView];
     
     {
         //创建用来包裹的View
         UIView *presentationWrapperView = [[UIView alloc] initWithFrame:self.frameOfPresentedViewInContainerView];
-        presentationWrapperView.layer.cornerRadius = CORNER_RADIUS;
-        presentationWrapperView.layer.masksToBounds = YES;
+//        presentationWrapperView.layer.cornerRadius = CORNER_RADIUS;
+//        presentationWrapperView.layer.masksToBounds = YES;
         self.presentationWrappingView = presentationWrapperView;
         
         // To undo the extra height added to presentationRoundedCornerView,
@@ -171,7 +173,7 @@
     if (isPresenting) {
         toView.frame = toViewFinalFrame;
         toView.transform = transform;
-        toView.layer.anchorPoint = CGPointMake(1, 0);
+        toView.layer.anchorPoint = self.anchorPoint;//CGPointMake(.9f, 0);
     } else {
         
     }
@@ -215,8 +217,12 @@
     // the bottom edge of the screen.
     CGRect presentedViewControllerFrame = containerViewBounds;
     presentedViewControllerFrame.size = presentedViewContentSize;
-    presentedViewControllerFrame.origin.x = containerViewBounds.size.width - 20.f - presentedViewContentSize.width;
-    presentedViewControllerFrame.origin.y = TLTopMargin(24.f);
+//    presentedViewControllerFrame.origin.x = containerViewBounds.size.width - 20.f - presentedViewContentSize.width;
+//    presentedViewControllerFrame.origin.y = TLTopMargin(24.f);
+    CGFloat originX = self.arrowPoint.x - presentedViewContentSize.width*self.anchorPoint.x;
+    CGFloat originY = self.arrowPoint.y - presentedViewContentSize.height*self.anchorPoint.y;
+    CGPoint origin = CGPointMake(originX, originY);
+    presentedViewControllerFrame.origin = origin;
     return presentedViewControllerFrame;
 }
 
