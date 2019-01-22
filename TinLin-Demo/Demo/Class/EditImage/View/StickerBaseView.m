@@ -15,11 +15,11 @@
 @property(nonatomic, strong, readwrite) UIView *contentView;
 
 /*  */
-@property (nonatomic ,strong)UIButton *closeBtn;
+@property(nonatomic, strong) UIButton *closeBtn;
 /*  */
-@property (nonatomic ,strong)UIButton *transformBtn;
+@property(nonatomic, strong) UIButton *transformBtn;
 /*  */
-@property (nonatomic ,strong)UIButton *editBtn;
+@property(nonatomic, strong) UIButton *editBtn;
 
 @property(nonatomic, assign) CGFloat originWidth;
 
@@ -130,9 +130,9 @@
         }
         return;
     }
-    
+
     //bounds方式
-    float an = atan2(locationPoint.y-self.center.y, locationPoint.x-self.center.x);
+    float an = atan2(locationPoint.y - self.center.y, locationPoint.x - self.center.x);
     self.transform = CGAffineTransformMakeRotation(an-M_PI_4);
     
     CGFloat length = [self distanceWithStartPoint:locationPoint endPoint:self.center]*sqrt(2);
@@ -143,7 +143,7 @@
                              self.bounds.origin.y,
                              length,
                              length);
-    
+     
     /*
     //transform方式
     float an = atan2(locationPoint.y-self.center.y, locationPoint.x-self.center.x);
