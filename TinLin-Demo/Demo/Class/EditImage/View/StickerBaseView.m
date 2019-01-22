@@ -21,18 +21,12 @@
 /*  */
 @property (nonatomic ,strong)UIButton *editBtn;
 
-/*  */
-@property (nonatomic ,assign)CGPoint translation;
+@property(nonatomic, assign) CGFloat originWidth;
 
 @end
 
 @implementation StickerBaseView {
-    CGFloat _scale;
-    CGFloat _arg;
-    
     CGPoint _initialPoint;
-    CGFloat _initialArg;
-    CGFloat _initialScale;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -54,9 +48,6 @@
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognizerEvent:)];
     panGestureRecognizer.delegate = self;
     [self addGestureRecognizer:panGestureRecognizer];
-    
-    _scale = 1;
-    _arg = 0;
 }
 
 - (void)tl_setupSubViews{
@@ -125,32 +116,48 @@
 
 - (void)editBtnClick:(UIButton *)sender{
     [MBProgressHUD tl_showTips:@"Edit"];
-//    self.transform = CGAffineTransformIdentity;
 }
 
 /**
  切换大小按钮的拖动手势的事件
  */
 - (void)handlePanGestureRecognizer:(UIPanGestureRecognizer *)gestureRecognizer {
-    CGPoint translationPoint = [gestureRecognizer translationInView:self.superview];
     CGPoint locationPoint = [gestureRecognizer locationInView:self.superview];
     
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        if (!self.originWidth) {
+            self.originWidth = self.width;
+        }
         return;
     }
     
+    //bounds方式
     float an = atan2(locationPoint.y-self.center.y, locationPoint.x-self.center.x);
-    //    NSLog(@"%f",an);
     self.transform = CGAffineTransformMakeRotation(an-M_PI_4);
-    //    NSLog(@"%@",NSStringFromCGPoint(locationPoint));
     
     CGFloat length = [self distanceWithStartPoint:locationPoint endPoint:self.center]*sqrt(2);
     length = MAX(length, 100.f);
     length = MIN(length, 300.f);
+
     self.bounds = CGRectMake(self.bounds.origin.x,
                              self.bounds.origin.y,
                              length,
                              length);
+    
+    /*
+    //transform方式
+    float an = atan2(locationPoint.y-self.center.y, locationPoint.x-self.center.x);
+    
+    CGFloat length = [self distanceWithStartPoint:locationPoint endPoint:self.center]*sqrt(2);
+    length = MAX(length, 100.f);
+    length = MIN(length, 300.f);
+    
+    CGFloat scale = length/self.originWidth;
+    CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale, scale);
+    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(an-M_PI_4);
+    CGAffineTransform transform = CGAffineTransformConcat(scaleTransform, rotationTransform);
+    self.transform = transform;
+    */
 }
 
 #pragma mark - UIGestureRecognizerDelegate
@@ -187,7 +194,7 @@
     return sqrt(x * x + y * y);
 }
 
-#pragma mark - 懒加载
+#pragma mark - Getter
 
 - (UIButton *)closeBtn{
     if (!_closeBtn) {
