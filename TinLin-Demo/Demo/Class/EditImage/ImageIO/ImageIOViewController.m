@@ -141,8 +141,7 @@
     TestImageModel *imageModel = self.imageDataSource ? self.imageDataSource[indexPath.row] : self.dataSource[indexPath.row];
     if (imageModel.width>0 && imageModel.height>0) {
         return screenWidth*imageModel.height/imageModel.width;
-    }
-    else{
+    } else {
         return 500;
     }
 }

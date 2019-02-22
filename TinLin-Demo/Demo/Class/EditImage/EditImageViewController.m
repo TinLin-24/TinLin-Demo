@@ -31,23 +31,39 @@
 
 - (void)p_setupNavigationItem{
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"add" style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonItemClick:)];
-    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+//    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    
+    UIBarButtonItem *saveBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"save" style:UIBarButtonItemStyleDone target:self action:@selector(saveBarButtonItemClick:)];
+    self.navigationItem.rightBarButtonItems = @[rightBarButtonItem,saveBarButtonItem];
 }
 
 - (void)rightBarButtonItemClick:(UIBarButtonItem *)sender{
     [self p_setupSubViews];
 }
 
+- (void)saveBarButtonItemClick:(UIBarButtonItem *)sender {
+
+}
+
 #pragma mark - 设置子控件
 
 - (void)p_setupSubViews{
     StickerBaseView *tlview = [[StickerViewOne alloc] initWithFrame:CGRectMake(100, 100, 150, 150)];
-//    tlview.backgroundColor = [UIColor redColor];
     [self.view addSubview:tlview];
     
 //    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"qrcode"]];
 //    imageView.frame = CGRectMake(100, 100, 150, 150);
 //    GYStickerView *view = [[GYStickerView alloc] initWithContentView:imageView];
+//    view.ctrlType = GYStickerViewCtrlTypeOne;
+//    [view setRemoveCtrlImage:[UIImage imageNamed:@"camera_sticker_off"]];
+//    [view setTransformCtrlImage:[UIImage imageNamed:@"camera_sticker_miter"]];
+//    [self.view addSubview:view];
+    
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 150, 150)];
+//    label.text = @"";
+//    label.numberOfLines = 0;
+//    label.textColor = [UIColor redColor];
+//    GYStickerView *view = [[GYStickerView alloc] initWithContentView:label];
 //    view.ctrlType = GYStickerViewCtrlTypeOne;
 //    [view setRemoveCtrlImage:[UIImage imageNamed:@"camera_sticker_off"]];
 //    [view setTransformCtrlImage:[UIImage imageNamed:@"camera_sticker_miter"]];

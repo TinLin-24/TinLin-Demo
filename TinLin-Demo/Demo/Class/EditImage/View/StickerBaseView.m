@@ -43,18 +43,18 @@
 
 #pragma mark - Private
 
-- (void)tl_setup{
+- (void)tl_setup {
     /* 添加拖动手势 */
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognizerEvent:)];
     panGestureRecognizer.delegate = self;
     [self addGestureRecognizer:panGestureRecognizer];
 }
 
-- (void)tl_setupSubViews{
+- (void)tl_setupSubViews {
     /* contentView 是用于子类添加自定义的样式的View */
     UIView *contentView = [[UIView alloc] init];
     contentView.layer.borderColor = [UIColor whiteColor].CGColor;
-    contentView.layer.borderWidth = .5f;
+    contentView.layer.borderWidth = 1.f;
     [self addSubview:contentView];
     self.contentView = contentView;
     
@@ -63,7 +63,7 @@
     [self addSubview:self.editBtn];
 }
 
-- (void)tl_makeSubViewsConstraints{
+- (void)tl_makeSubViewsConstraints {
 //    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.edges.insets(UIEdgeInsetsMake(margin, margin, margin, margin));
 //    }];
@@ -99,7 +99,7 @@
 /**
  View的拖动手势的事件
  */
-- (void)panGestureRecognizerEvent:(UIPanGestureRecognizer *)panGestureRecognizer{
+- (void)panGestureRecognizerEvent:(UIPanGestureRecognizer *)panGestureRecognizer {
     CGPoint p = [panGestureRecognizer translationInView:self.superview];
     if(panGestureRecognizer.state == UIGestureRecognizerStateBegan){
         _initialPoint = self.center;

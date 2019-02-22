@@ -73,7 +73,7 @@
     NSMutableArray *dataSource = [NSMutableArray arrayWithCapacity:self.dataSource.count];
     UFPhotoView *view = [self.view viewWithTag:1122];
     for (NSString *urlStr in self.dataSource) {
-        UFPhotoModel *item = [UFPhotoModel itemWithSourceView:nil
+        UFPhotoModel *item = [UFPhotoModel itemWithSourceView:view.imageView
                                                      imageUrl:[NSURL URLWithString:urlStr]];
         [dataSource addObject:item];
     }
