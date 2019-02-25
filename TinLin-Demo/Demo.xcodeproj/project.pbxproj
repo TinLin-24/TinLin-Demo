@@ -21,6 +21,7 @@
 		049FC91421B673DF00AF04FF /* GYStickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FC91321B673DF00AF04FF /* GYStickerView.m */; };
 		04A405CF21C0BEA400CD2998 /* WaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A405CE21C0BEA400CD2998 /* WaveViewController.m */; };
 		04A405D321C0EE6100CD2998 /* LayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A405D221C0EE6100CD2998 /* LayerViewController.m */; };
+		04B2009B2223948000E4E5E3 /* TLHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2009A2223948000E4E5E3 /* TLHttpManager.m */; };
 		04C8A6D721B7705F00D7B7ED /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C8A6D621B7705F00D7B7ED /* MapViewController.m */; };
 		04C8A6E821B7D10900D7B7ED /* TLAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C8A6E721B7D10900D7B7ED /* TLAnnotationView.m */; };
 		04C8A6EE21B7D13100D7B7ED /* TLAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C8A6ED21B7D13100D7B7ED /* TLAnnotation.m */; };
@@ -107,6 +108,8 @@
 		04A405CE21C0BEA400CD2998 /* WaveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaveViewController.m; sourceTree = "<group>"; };
 		04A405D121C0EE6100CD2998 /* LayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LayerViewController.h; sourceTree = "<group>"; };
 		04A405D221C0EE6100CD2998 /* LayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LayerViewController.m; sourceTree = "<group>"; };
+		04B200992223948000E4E5E3 /* TLHttpManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLHttpManager.h; sourceTree = "<group>"; };
+		04B2009A2223948000E4E5E3 /* TLHttpManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLHttpManager.m; sourceTree = "<group>"; };
 		04C8A6D521B7705F00D7B7ED /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		04C8A6D621B7705F00D7B7ED /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		04C8A6E421B7C9EC00D7B7ED /* TLMarcos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLMarcos.h; sourceTree = "<group>"; };
@@ -245,6 +248,8 @@
 			children = (
 				04078A9F21D4B938002E9743 /* TLFileManager.h */,
 				04078AA021D4B938002E9743 /* TLFileManager.m */,
+				04B200992223948000E4E5E3 /* TLHttpManager.h */,
+				04B2009A2223948000E4E5E3 /* TLHttpManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -963,6 +968,7 @@
 				04C8A6EE21B7D13100D7B7ED /* TLAnnotation.m in Sources */,
 				04CDE43521D5C539002A1E81 /* UIAlertController+TLExtension.m in Sources */,
 				045ABF1A21C78F97008C8C5D /* HeaderViewController.m in Sources */,
+				04B2009B2223948000E4E5E3 /* TLHttpManager.m in Sources */,
 				39866B4920AB00960011C4B7 /* main.m in Sources */,
 				04E9AFFF21F0521B00C7FBFC /* TLCustomBottomViewController.m in Sources */,
 				39713F5D21130E1800F16094 /* BaseViewController.m in Sources */,

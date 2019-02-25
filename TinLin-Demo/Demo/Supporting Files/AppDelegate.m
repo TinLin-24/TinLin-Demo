@@ -11,6 +11,8 @@
 
 #import "MyOOMDataManager.h"
 
+#import "TLHttpManager.h"
+
 NSString *const kChunkMallocNoti = @"kChunkMallocNoti";
 
 @interface AppDelegate ()
