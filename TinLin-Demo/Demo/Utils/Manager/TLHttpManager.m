@@ -130,6 +130,8 @@ static TLHttpManager *_manager = nil;
 - (AFHTTPSessionManager *)manager {
     if (_manager == nil) {
         _manager = [AFHTTPSessionManager manager];
+        // 请求超时的时间
+        _manager.requestSerializer.timeoutInterval = 30;
     }
     return _manager;
 }
