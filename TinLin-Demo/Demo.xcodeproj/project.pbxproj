@@ -12,6 +12,7 @@
 		04078AA121D4B938002E9743 /* TLFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04078AA021D4B938002E9743 /* TLFileManager.m */; };
 		0411D8A621D711A000C76DB2 /* TLShutterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0411D8A521D711A000C76DB2 /* TLShutterButton.m */; };
 		04275A9021E74BB00095D99E /* TLCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04275A8F21E74BB00095D99E /* TLCoreDataViewController.m */; };
+		0436E0C42224CE0900AA1B3A /* NSObject+RunTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0436E0C32224CE0900AA1B3A /* NSObject+RunTime.m */; };
 		0437503821EF1F2F00FA218A /* PresentBottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0437503721EF1F2F00FA218A /* PresentBottomViewController.m */; };
 		0437503E21EF1F8100FA218A /* TLPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0437503D21EF1F8100FA218A /* TLPresentationController.m */; };
 		0437504721EF325E00FA218A /* TLShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0437504621EF325E00FA218A /* TLShareViewController.m */; };
@@ -90,6 +91,8 @@
 		0411D8A521D711A000C76DB2 /* TLShutterButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLShutterButton.m; sourceTree = "<group>"; };
 		04275A8E21E74BB00095D99E /* TLCoreDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLCoreDataViewController.h; sourceTree = "<group>"; };
 		04275A8F21E74BB00095D99E /* TLCoreDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLCoreDataViewController.m; sourceTree = "<group>"; };
+		0436E0C22224CE0900AA1B3A /* NSObject+RunTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+RunTime.h"; sourceTree = "<group>"; };
+		0436E0C32224CE0900AA1B3A /* NSObject+RunTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RunTime.m"; sourceTree = "<group>"; };
 		0437503621EF1F2F00FA218A /* PresentBottomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentBottomViewController.h; sourceTree = "<group>"; };
 		0437503721EF1F2F00FA218A /* PresentBottomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentBottomViewController.m; sourceTree = "<group>"; };
 		0437503C21EF1F8100FA218A /* TLPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLPresentationController.h; sourceTree = "<group>"; };
@@ -378,6 +381,8 @@
 				04CDE43421D5C539002A1E81 /* MBProgressHUD+TLExtension.m */,
 				04CDE43221D5C539002A1E81 /* UIAlertController+TLExtension.h */,
 				04CDE43321D5C539002A1E81 /* UIAlertController+TLExtension.m */,
+				0436E0C22224CE0900AA1B3A /* NSObject+RunTime.h */,
+				0436E0C32224CE0900AA1B3A /* NSObject+RunTime.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -953,6 +958,7 @@
 				39E395D3211D692F00A7AEA8 /* HZPhotoBrowser.m in Sources */,
 				04A405D321C0EE6100CD2998 /* LayerViewController.m in Sources */,
 				39085933211ED53D00B70962 /* UFSDImageManager.m in Sources */,
+				0436E0C42224CE0900AA1B3A /* NSObject+RunTime.m in Sources */,
 				045ABF1621C7430D008C8C5D /* UIViewController+TLNavigationController.m in Sources */,
 				04C8A6D721B7705F00D7B7ED /* MapViewController.m in Sources */,
 				3918E0A720EC852A00E365D4 /* BaseTableViewCell.m in Sources */,

@@ -103,6 +103,7 @@ static TLHttpManager *_manager = nil;
     return [self POST:URLString parameters:parameters constructingBodyWithBlock:block progress:nil success:success failure:failure];
 }
 
+#pragma mark - Private
 
 - (AFSecurityPolicy *)customSecurityPolicy {
     
@@ -127,6 +128,8 @@ static TLHttpManager *_manager = nil;
     return securityPolicy;
 }
 
+#pragma mark - Getter
+
 - (AFHTTPSessionManager *)manager {
     if (_manager == nil) {
         _manager = [AFHTTPSessionManager manager];
@@ -136,7 +139,7 @@ static TLHttpManager *_manager = nil;
     return _manager;
 }
 
-- (NSSet <NSString *> *) acceptableContentTypes {
+- (NSSet <NSString *> *)acceptableContentTypes {
     if (_acceptableContentTypes == nil) {
         _acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json",@"text/javascript",@"text/html",nil];
     }

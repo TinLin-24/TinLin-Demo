@@ -17,7 +17,7 @@
 }
 
 - (BOOL)tl_navigationBarHidden {
-    return objc_getAssociatedObject(self, @selector(tl_navigationBarHidden));
+    return objc_getAssociatedObject(self, _cmd);
 }
 
 - (TLNavigationController *)tl_navigationController {

@@ -11,8 +11,6 @@
 
 #import "MyOOMDataManager.h"
 
-#import "TLHttpManager.h"
-
 NSString *const kChunkMallocNoti = @"kChunkMallocNoti";
 
 @interface AppDelegate ()
@@ -27,7 +25,7 @@ NSString *const kChunkMallocNoti = @"kChunkMallocNoti";
     [self setupWindow];
     
     //[self setupOOMDetector];
-    
+
     return YES;
 }
 
