@@ -99,8 +99,6 @@
 - (void)dismissalTransitionDidEnd:(BOOL)completed {
     if (self.maskView.superview && completed) {
         [self.maskView removeFromSuperview];
-    }
-    if (completed == NO) {
         self.maskView = nil;
         self.presentationWrappingView = nil;
     }

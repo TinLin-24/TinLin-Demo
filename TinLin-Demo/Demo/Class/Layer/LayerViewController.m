@@ -33,6 +33,8 @@
 
     [self _transformLayer];
 
+    
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加遮罩" style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonItemClick:)];
 }
 

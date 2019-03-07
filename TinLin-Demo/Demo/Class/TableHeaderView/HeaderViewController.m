@@ -26,12 +26,14 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     self.navigationController.navigationBar.translucent = YES;
+    
+//    self.tl_navigationBarBackgroundImage = [UIImage new];
 }
 
 - (void)configure {
     [super configure];
     self.title = @"TinLin";
-    
+
     [self.dataSource addObjectsFromArray:@[@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12]];
     [self.dataSource addObjectsFromArray:@[@13,@14,@15,@16,@17]];
 

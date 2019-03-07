@@ -57,7 +57,7 @@
                            @"UIViewPropertyAnimator",
                            @"UIStackView",
                            @"圆角裁剪",
-                           @"图片编辑",
+                           @"图片贴纸",
                            @"图片浏览",
                            @"TableView",
                            @"地图",

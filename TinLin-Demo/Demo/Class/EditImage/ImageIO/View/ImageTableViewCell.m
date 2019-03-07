@@ -27,7 +27,7 @@
 -(void)_setupSubViews{
     UIImageView *photoView = [[UIImageView alloc] init];
     [photoView setImage:[UIImage imageNamed:@"default_logo"]];
-    photoView.contentMode=UIViewContentModeScaleToFill;
+    photoView.contentMode = UIViewContentModeScaleToFill;
     [self addSubview:photoView];
     self.photoView = photoView;
 }

@@ -13,9 +13,11 @@
 @interface UIViewController (TLNavigationController)
 
 //
-@property (nonatomic, assign)BOOL tl_navigationBarHidden;
+@property(nonatomic, assign) BOOL tl_navigationBarHidden;
 
 //
-@property (nonatomic, strong, readonly)TLNavigationController *tl_navigationController;
+@property(nonatomic, strong, readonly) TLNavigationController *tl_navigationController;
+
+@property(nonatomic, strong) UIImage *tl_navigationBarBackgroundImage;
 
 @end
