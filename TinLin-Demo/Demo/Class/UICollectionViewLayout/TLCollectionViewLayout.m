@@ -74,12 +74,7 @@
             CGFloat minimumLineSpacing = [self fetchMinimumLineSpacingForSectionAtIndex:section];
             CGFloat minimumInteritemSpacing = [self fetchMinimumInteritemSpacingForSectionAtIndex:section];
             if (isNeed) {
-                self.contentOffsetY = -SCREEN_WIDTH/4;
-                if (row == 0) {
-                    CGPoint origin = CGPointMake(attributes.frame.origin.x, headerY);
-                    CGSize size = attributes.frame.size;
-                    attributes.frame = CGRectMake(origin.x, origin.y, size.width, size.height);
-                } else if (row == 1) {
+                if (row == 1) {
                     CGPoint origin = CGPointMake(attributes.frame.origin.x, headerY);
                     CGSize size = attributes.frame.size;
                     attributes.frame = CGRectMake(origin.x, origin.y, size.width, size.height);
@@ -91,11 +86,8 @@
                     CGPoint origin = CGPointMake(SCREEN_WIDTH*3/4, headerY+SCREEN_WIDTH/4);
                     CGSize size = attributes.frame.size;
                     attributes.frame = CGRectMake(origin.x, origin.y, size.width, size.height);
-                } else {
-                    CGPoint origin = CGPointMake(attributes.frame.origin.x, attributes.frame.origin.y+self.contentOffsetY);
-                    CGSize size = attributes.frame.size;
-                    attributes.frame = CGRectMake(origin.x, origin.y, size.width, size.height);
                 }
+                self.contentOffsetY = -SCREEN_WIDTH/4;
             } else {
                 CGPoint attributesOrigin = CGPointMake(attributes.frame.origin.x, attributes.frame.origin.y+self.contentOffsetY);
                 CGSize attributesSize = attributes.frame.size;
