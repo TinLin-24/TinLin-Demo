@@ -10,6 +10,8 @@
 
 #import "TLCollectionViewLayout.h"
 
+#import "LabelCollectionViewCell.h"
+
 @interface TestCollectionViewController () <UICollectionViewDataSource,TLCollectionViewLayoutDelegate>
 
 @property(nonatomic, strong) UICollectionView *collectionView;
@@ -37,8 +39,8 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell" forIndexPath:indexPath];
-    cell.backgroundColor = TLRandomColor;
+    LabelCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kLabelCollectionViewCellID forIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"%zd-%zd",indexPath.section,indexPath.row];
     return cell;
 }
 
@@ -118,7 +120,7 @@
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.showsHorizontalScrollIndicator = NO;
         
-        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"UICollectionViewCell"];
+        [_collectionView registerClass:[LabelCollectionViewCell class] forCellWithReuseIdentifier:kLabelCollectionViewCellID];
         [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"UICollectionViewSectionHeader"];
         [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"UICollectionViewSectionFooter"];
     }

@@ -75,6 +75,9 @@
 		39E3CC0A211A779C008EDCA8 /* EditImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E3CC09211A779C008EDCA8 /* EditImageViewController.m */; };
 		39E3CC0E211A7B8F008EDCA8 /* StickerBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E3CC0D211A7B8F008EDCA8 /* StickerBaseView.m */; };
 		39E495A9211821FC00F26B0A /* StackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E495A8211821FC00F26B0A /* StackViewController.m */; };
+		39E61257229A70D500B03309 /* LabelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E61256229A70D500B03309 /* LabelCollectionViewCell.m */; };
+		39E6125A229A782D00B03309 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E61259229A782D00B03309 /* BaseCollectionViewCell.m */; };
+		39E6125D229A78CF00B03309 /* BaseCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E6125C229A78CF00B03309 /* BaseCollectionReusableView.m */; };
 		39FDED11211938670064CDD9 /* MyOOMDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FDED0F211938670064CDD9 /* MyOOMDataManager.m */; };
 		39FDED15211942B90064CDD9 /* CroppedFilletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FDED14211942B90064CDD9 /* CroppedFilletViewController.m */; };
 		39FDED192119708B0064CDD9 /* StackToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FDED182119708B0064CDD9 /* StackToolView.m */; };
@@ -221,6 +224,12 @@
 		39E3CC0D211A7B8F008EDCA8 /* StickerBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StickerBaseView.m; sourceTree = "<group>"; };
 		39E495A7211821FC00F26B0A /* StackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StackViewController.h; sourceTree = "<group>"; };
 		39E495A8211821FC00F26B0A /* StackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StackViewController.m; sourceTree = "<group>"; };
+		39E61255229A70D500B03309 /* LabelCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelCollectionViewCell.h; sourceTree = "<group>"; };
+		39E61256229A70D500B03309 /* LabelCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelCollectionViewCell.m; sourceTree = "<group>"; };
+		39E61258229A782D00B03309 /* BaseCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewCell.h; sourceTree = "<group>"; };
+		39E61259229A782D00B03309 /* BaseCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewCell.m; sourceTree = "<group>"; };
+		39E6125B229A78CF00B03309 /* BaseCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCollectionReusableView.h; sourceTree = "<group>"; };
+		39E6125C229A78CF00B03309 /* BaseCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionReusableView.m; sourceTree = "<group>"; };
 		39FDED0F211938670064CDD9 /* MyOOMDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOOMDataManager.m; sourceTree = "<group>"; };
 		39FDED10211938670064CDD9 /* MyOOMDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOOMDataManager.h; sourceTree = "<group>"; };
 		39FDED13211942B90064CDD9 /* CroppedFilletViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CroppedFilletViewController.h; sourceTree = "<group>"; };
@@ -508,6 +517,8 @@
 				3943BB8322997DD40078972A /* TLCollectionViewLayout.m */,
 				3943BB85229981F70078972A /* TestCollectionViewController.h */,
 				3943BB86229981F70078972A /* TestCollectionViewController.m */,
+				39E61255229A70D500B03309 /* LabelCollectionViewCell.h */,
+				39E61256229A70D500B03309 /* LabelCollectionViewCell.m */,
 			);
 			path = UICollectionViewLayout;
 			sourceTree = "<group>";
@@ -614,6 +625,10 @@
 			children = (
 				3918E0A520EC852A00E365D4 /* BaseTableViewCell.h */,
 				3918E0A620EC852A00E365D4 /* BaseTableViewCell.m */,
+				39E61258229A782D00B03309 /* BaseCollectionViewCell.h */,
+				39E61259229A782D00B03309 /* BaseCollectionViewCell.m */,
+				39E6125B229A78CF00B03309 /* BaseCollectionReusableView.h */,
+				39E6125C229A78CF00B03309 /* BaseCollectionReusableView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1010,7 +1025,9 @@
 				04CDE43621D5C539002A1E81 /* MBProgressHUD+TLExtension.m in Sources */,
 				39713F5421130CAA00F16094 /* CAAnimationViewController.m in Sources */,
 				04078A9C21D482E0002E9743 /* UIBezierPath+GetAllPoints.m in Sources */,
+				39E6125D229A78CF00B03309 /* BaseCollectionReusableView.m in Sources */,
 				04F69D0421C3B0FF000D0AFF /* TLNavigationController.m in Sources */,
+				39E6125A229A782D00B03309 /* BaseCollectionViewCell.m in Sources */,
 				399D279520FDF5D400CB888C /* WaterMarkLayer.m in Sources */,
 				3908592D211ED18300B70962 /* UFPhotoModel.m in Sources */,
 				39FDED1D2119815C0064CDD9 /* PopViewController.m in Sources */,
@@ -1023,6 +1040,7 @@
 				39713F68211310E900F16094 /* ImageIOViewController.m in Sources */,
 				39E395D5211D692F00A7AEA8 /* HZWaitingView.m in Sources */,
 				04CE461221D8A2E400ADD4C3 /* TLCameraControlView.m in Sources */,
+				39E61257229A70D500B03309 /* LabelCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
