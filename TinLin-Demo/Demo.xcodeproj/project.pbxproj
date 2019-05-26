@@ -49,6 +49,8 @@
 		39085939211EE4CD00B70962 /* UFPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39085938211EE4CD00B70962 /* UFPhotoBrowserViewController.m */; };
 		3916856321144A3E0016AC24 /* WatermarkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3916856121144A3E0016AC24 /* WatermarkTool.m */; };
 		3918E0A720EC852A00E365D4 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3918E0A620EC852A00E365D4 /* BaseTableViewCell.m */; };
+		3943BB8422997DD40078972A /* TLCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3943BB8322997DD40078972A /* TLCollectionViewLayout.m */; };
+		3943BB87229981F70078972A /* TestCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3943BB86229981F70078972A /* TestCollectionViewController.m */; };
 		394B152220EE3667009C879A /* array.plist in Resources */ = {isa = PBXBuildFile; fileRef = 394B152120EE3667009C879A /* array.plist */; };
 		394B152620EE3881009C879A /* TestImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 394B152520EE3880009C879A /* TestImageModel.m */; };
 		39713F4D2112ECCF00F16094 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39713F4C2112ECCF00F16094 /* MainViewController.m */; };
@@ -169,6 +171,10 @@
 		3916856221144A3E0016AC24 /* WatermarkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatermarkTool.h; sourceTree = "<group>"; };
 		3918E0A520EC852A00E365D4 /* BaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		3918E0A620EC852A00E365D4 /* BaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		3943BB8222997DD40078972A /* TLCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLCollectionViewLayout.h; sourceTree = "<group>"; };
+		3943BB8322997DD40078972A /* TLCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLCollectionViewLayout.m; sourceTree = "<group>"; };
+		3943BB85229981F70078972A /* TestCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewController.h; sourceTree = "<group>"; };
+		3943BB86229981F70078972A /* TestCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewController.m; sourceTree = "<group>"; };
 		394B152120EE3667009C879A /* array.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = array.plist; sourceTree = "<group>"; };
 		394B152420EE3880009C879A /* TestImageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestImageModel.h; sourceTree = "<group>"; };
 		394B152520EE3880009C879A /* TestImageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestImageModel.m; sourceTree = "<group>"; };
@@ -495,6 +501,17 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		3943BB8122997DAF0078972A /* UICollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				3943BB8222997DD40078972A /* TLCollectionViewLayout.h */,
+				3943BB8322997DD40078972A /* TLCollectionViewLayout.m */,
+				3943BB85229981F70078972A /* TestCollectionViewController.h */,
+				3943BB86229981F70078972A /* TestCollectionViewController.m */,
+			);
+			path = UICollectionViewLayout;
+			sourceTree = "<group>";
+		};
 		394B152320EE378A009C879A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,6 +524,7 @@
 		39713F4A2112ECB400F16094 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				3943BB8122997DAF0078972A /* UICollectionViewLayout */,
 				0437503521EF1EF500FA218A /* PresentBottom */,
 				04D1F0FD21E72276008F4D25 /* CoreData */,
 				04CDE4AB21D5D525002A1E81 /* AVCapture */,
@@ -971,6 +989,7 @@
 				04A405CF21C0BEA400CD2998 /* WaveViewController.m in Sources */,
 				39085939211EE4CD00B70962 /* UFPhotoBrowserViewController.m in Sources */,
 				04CBBF2121F1A71B0084ED1F /* TLMenuViewController.m in Sources */,
+				3943BB87229981F70078972A /* TestCollectionViewController.m in Sources */,
 				04C8A6E821B7D10900D7B7ED /* TLAnnotationView.m in Sources */,
 				04F8DF9421F5BDA40059B04C /* StickerViewOne.m in Sources */,
 				04C8A6EE21B7D13100D7B7ED /* TLAnnotation.m in Sources */,
@@ -996,6 +1015,7 @@
 				3908592D211ED18300B70962 /* UFPhotoModel.m in Sources */,
 				39FDED1D2119815C0064CDD9 /* PopViewController.m in Sources */,
 				04078A9921D46931002E9743 /* TLCameraViewController.m in Sources */,
+				3943BB8422997DD40078972A /* TLCollectionViewLayout.m in Sources */,
 				04F69CFA21C38133000D0AFF /* BaseTableViewController.m in Sources */,
 				394B152620EE3881009C879A /* TestImageModel.m in Sources */,
 				39866B3B20AB00940011C4B7 /* AppDelegate.m in Sources */,
