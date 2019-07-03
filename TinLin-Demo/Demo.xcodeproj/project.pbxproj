@@ -83,6 +83,7 @@
 		39FDED192119708B0064CDD9 /* StackToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FDED182119708B0064CDD9 /* StackToolView.m */; };
 		39FDED1D2119815C0064CDD9 /* PopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FDED1C2119815C0064CDD9 /* PopViewController.m */; };
 		E87567103D57DC76D154721A /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0DB43D314FD8DCAD1FF428 /* libPods-Demo.a */; };
+		E9FDF5C522CCA7560001BDF1 /* TLImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FDF5C322CCA7560001BDF1 /* TLImageTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -239,6 +240,8 @@
 		39FDED1B2119815C0064CDD9 /* PopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopViewController.h; sourceTree = "<group>"; };
 		39FDED1C2119815C0064CDD9 /* PopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopViewController.m; sourceTree = "<group>"; };
 		9B0DB43D314FD8DCAD1FF428 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9FDF5C322CCA7560001BDF1 /* TLImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLImageTool.m; sourceTree = "<group>"; };
+		E9FDF5C422CCA7560001BDF1 /* TLImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLImageTool.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -645,6 +648,8 @@
 		39713F65211310D900F16094 /* ImageIO */ = {
 			isa = PBXGroup;
 			children = (
+				E9FDF5C422CCA7560001BDF1 /* TLImageTool.h */,
+				E9FDF5C322CCA7560001BDF1 /* TLImageTool.m */,
 				394B152120EE3667009C879A /* array.plist */,
 				39713F66211310E900F16094 /* ImageIOViewController.h */,
 				39713F67211310E900F16094 /* ImageIOViewController.m */,
@@ -1000,6 +1005,7 @@
 				39085936211ED77900B70962 /* UFPhotoView.m in Sources */,
 				0489425721DCA21B00603D4B /* TLCameraConfig.m in Sources */,
 				04CDE4AF21D5F98F002A1E81 /* TLAVCaptureViewController.m in Sources */,
+				E9FDF5C522CCA7560001BDF1 /* TLImageTool.m in Sources */,
 				04F69CFD21C392FF000D0AFF /* SwipeActionViewController.m in Sources */,
 				04A405CF21C0BEA400CD2998 /* WaveViewController.m in Sources */,
 				39085939211EE4CD00B70962 /* UFPhotoBrowserViewController.m in Sources */,
