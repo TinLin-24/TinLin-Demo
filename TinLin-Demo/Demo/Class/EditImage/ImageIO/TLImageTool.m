@@ -59,14 +59,24 @@ static TLImageTool *_tool = nil;
         UIImage *img;
         CGImageSourceRef source;
         
-        if ([imageCache diskImageDataExistsWithKey:urlStr]){
+//        if ([imageCache diskImageDataExistsWithKey:urlStr]){
+//            img = [imageCache imageFromDiskCacheForKey:urlStr];
+//            NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(img)];
+//            source = CGImageSourceCreateWithData((CFDataRef)imageData, NULL);
+//        } else {
+//            source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
+//            CGImageRef imageRef = CGImageSourceCreateImageAtIndex(source, 0, NULL);
+//            [imageCache storeImage:[UIImage imageWithCGImage:imageRef] forKey:urlStr completion:nil];
+//            !imageRef ? : CFRelease(imageRef);
+//        }
+        if ([imageCache diskImageExistsWithKey:urlStr]){
             img = [imageCache imageFromDiskCacheForKey:urlStr];
             NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(img)];
             source = CGImageSourceCreateWithData((CFDataRef)imageData, NULL);
         } else {
             source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
             CGImageRef imageRef = CGImageSourceCreateImageAtIndex(source, 0, NULL);
-            [imageCache storeImage:[UIImage imageWithCGImage:imageRef] forKey:urlStr completion:nil];
+            [imageCache storeImage:[UIImage imageWithCGImage:imageRef] forKey:urlStr toDisk:YES];
             !imageRef ? : CFRelease(imageRef);
         }
         
